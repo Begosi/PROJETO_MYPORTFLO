@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  
+  --color-background: #050505;
+  --color-foreground: #ffffff;
+  --color-accent: #3b82f6;
+  
+  /* Liquid Glass Utilities / Variables */
+  --color-glass-bg: rgba(255, 255, 255, 0.03);
+  --color-glass-border: rgba(255, 255, 255, 0.08);
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-white/20;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .liquid-glass {
+    @apply bg-glass-bg backdrop-blur-2xl border border-glass-border shadow-2xl;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-white via-white/80 to-white/30;
+  }
+}
+
+/* Custom lenis styles for smooth scrolling */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Animação suave para o background simulando movimento de fumaça */
+@keyframes smoke {
+  0% {
+    transform: scale(1.05) translate(0, 0) rotate(0deg);
+  }
+  15% {
+    transform: scale(1.12) translate(-2%, -1%) rotate(1deg);
+  }
+  30% {
+    transform: scale(1.08) translate(1%, -3%) rotate(-0.5deg);
+  }
+  45% {
+    transform: scale(1.15) translate(-1%, 2%) rotate(0.5deg);
+  }
+  60% {
+    transform: scale(1.1) translate(3%, 1%) rotate(-1deg);
+  }
+  75% {
+    transform: scale(1.13) translate(-2%, -2%) rotate(1.5deg);
+  }
+  85% {
+    transform: scale(1.07) translate(2%, -1%) rotate(-0.5deg);
+  }
+  100% {
+    transform: scale(1.05) translate(-1%, 1%) rotate(0deg);
+  }
+}
+
+.animate-smoke {
+  animation: smoke 18s ease-in-out infinite alternate;
+  will-change: transform;
+}
