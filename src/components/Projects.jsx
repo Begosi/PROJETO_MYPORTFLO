@@ -53,17 +53,17 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section className="py-32 px-6 relative z-10" id="projects">
+    <section className="py-16 md:py-32 px-6 relative z-10" id="projects">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-20px" }}
           transition={{ duration: 0.8 }}
-          className="flex justify-between items-end mb-24"
+          className="flex justify-between items-end mb-16 md:mb-24"
         >
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white">
-            Trabalhos <br /> <span className="text-white/40">Recentes.</span>
+            Trabalhos <br /> <span className="text-white/60">Recentes.</span>
           </h2>
         </motion.div>
 
@@ -73,7 +73,7 @@ export default function Projects() {
               key={project.id}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: true, margin: "-20px" }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               className="group cursor-pointer"
             >
@@ -84,7 +84,7 @@ export default function Projects() {
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                 />
 
-                {/* Liquid Glass Overlay on Hover */}
+                {/* Liquid Glass Overlay on Hover (Desktop) */}
                 <div className="absolute inset-0 bg-black/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-3">
                   <a href={project.link} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center hover:scale-110 transition-transform">
                     <ArrowUpRight className="w-5 h-5" />
@@ -98,15 +98,35 @@ export default function Projects() {
               <div>
                 <div className="flex flex-wrap gap-2 mb-3">
                   {project.tech.map((t, i) => (
-                    <span key={i} className="text-[10px] font-medium px-2 py-1 rounded-full bg-white/5 text-white/70 border border-white/10">
+                    <span key={i} className="text-[10px] font-medium px-2 py-1 rounded-full bg-white/5 text-white/80 border border-white/10">
                       {t}
                     </span>
                   ))}
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-2">{project.title}</h3>
-                <p className="text-white/50 text-xs leading-relaxed">
+                <p className="text-white/75 text-xs leading-relaxed">
                   {project.description}
                 </p>
+
+                {/* Mobile Action Buttons (Visible only on mobile/tablet) */}
+                <div className="mt-4 flex md:hidden gap-3">
+                  <a 
+                    href={project.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex-1 py-2.5 px-4 rounded-xl bg-white text-black text-center font-semibold text-xs flex items-center justify-center gap-1.5 active:scale-95 transition-transform"
+                  >
+                    Acessar <ArrowUpRight className="w-3.5 h-3.5" />
+                  </a>
+                  <a 
+                    href={project.github} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex-1 py-2.5 px-4 rounded-xl bg-white/10 text-white text-center font-semibold text-xs border border-white/10 flex items-center justify-center gap-1.5 active:scale-95 transition-transform"
+                  >
+                    GitHub <Code className="w-3.5 h-3.5" />
+                  </a>
+                </div>
               </div>
             </motion.div>
           ))}

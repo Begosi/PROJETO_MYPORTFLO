@@ -27,7 +27,7 @@ export default function Header() {
             <span className="font-bold tracking-tight text-white/90 text-lg z-50">
               André Luis.
             </span>
-            <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-white/60">
+            <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-white/80">
               <a href="#about" className="hover:text-white transition-colors">Sobre</a>
               <a href="#experience" className="hover:text-white transition-colors">Experiência</a>
               <a href="#projects" className="hover:text-white transition-colors">Projetos</a>
@@ -66,7 +66,7 @@ export default function Header() {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="fixed inset-0 z-40 md:hidden flex flex-col items-center justify-center bg-black/95 backdrop-blur-xl"
           >
-            <nav className="flex flex-col items-center gap-8 text-2xl font-medium text-white/70">
+            <nav className="flex flex-col items-center gap-8 text-2xl font-medium text-white/90">
               <a href="#about" onClick={closeMenu} className="hover:text-white transition-colors">Sobre</a>
               <a href="#experience" onClick={closeMenu} className="hover:text-white transition-colors">Experiência</a>
               <a href="#projects" onClick={closeMenu} className="hover:text-white transition-colors">Projetos</a>

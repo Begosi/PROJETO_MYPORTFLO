@@ -17,10 +17,14 @@
     color-scheme: dark;
   }
   
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
   body {
     @apply bg-background text-foreground antialiased selection:bg-white/20;
     font-family: var(--font-sans);
-    overflow-x: hidden;
   }
 }
 
@@ -30,7 +34,7 @@
   }
   
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-br from-white via-white/80 to-white/30;
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-white via-white/90 to-white/70;
   }
 }
 

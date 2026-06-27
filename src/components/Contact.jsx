@@ -17,21 +17,21 @@ const Instagram = ({ className }) => (
 
 export default function Contact() {
   return (
-    <section className="py-32 px-6 relative z-10" id="contact">
+    <section className="py-16 md:py-32 px-6 relative z-10" id="contact">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
           
           <div className="flex flex-col justify-between">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-20px" }}
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-5xl md:text-8xl font-black tracking-tighter text-white mb-8 leading-[0.9]">
-                Let's build <br /> <span className="text-white/30">together.</span>
+                Let's build <br /> <span className="text-white/60">together.</span>
               </h2>
-              <p className="text-xl text-white/50 max-w-md font-light">
+              <p className="text-xl text-white/75 max-w-md font-light">
                 Pronto para criarmos a próxima solução juntos? Vamos conversar sobre o seu projeto.
               </p>
             </motion.div>
@@ -39,9 +39,9 @@ export default function Contact() {
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-20px" }}
               transition={{ duration: 1, delay: 0.4 }}
-              className="mt-24 flex flex-wrap gap-4"
+              className="mt-12 lg:mt-24 flex flex-wrap gap-4"
             >
               <a href="https://www.instagram.com/andreluis.gym/" target="_blank" rel="noopener noreferrer" className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center text-white/70 hover:text-white hover:bg-white/5 hover:border-white/40 transition-all">
                 <Instagram className="w-5 h-5" />
@@ -61,10 +61,10 @@ export default function Contact() {
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-20px" }}
             transition={{ duration: 1, delay: 0.2 }}
           >
-            <LiquidCard className="p-8 md:p-12">
+            <LiquidCard className="p-6 md:p-12">
               <form className="flex flex-col gap-8">
                 <div className="flex flex-col gap-2">
                   <label className="text-sm font-medium text-white/60">Seu Nome</label>
@@ -105,27 +105,27 @@ export default function Contact() {
         </div>
       </div>
       
-      <div className="max-w-7xl mx-auto mt-32 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
-        <p className="text-white/40 text-sm">
+      <div className="max-w-7xl mx-auto mt-16 md:mt-32 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+        <p className="text-white/60 text-sm">
           © {new Date().getFullYear()} André Luis Fonseca Da Cruz.
         </p>
         
         <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
-          <a href="https://www.instagram.com/andreluis.gym/" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white transition-colors flex items-center gap-2 text-sm">
+          <a href="https://www.instagram.com/andreluis.gym/" target="_blank" rel="noopener noreferrer" className="text-white/65 hover:text-white transition-colors flex items-center gap-2 text-sm">
             <Instagram className="w-4 h-4" /> @andreluis.gym
           </a>
-          <a href="https://www.linkedin.com/in/andr%C3%A9-luis-fonseca-035015305/" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white transition-colors flex items-center gap-2 text-sm">
+          <a href="https://www.linkedin.com/in/andr%C3%A9-luis-fonseca-035015305/" target="_blank" rel="noopener noreferrer" className="text-white/65 hover:text-white transition-colors flex items-center gap-2 text-sm">
             <Linkedin className="w-4 h-4" /> LinkedIn
           </a>
-          <a href="https://github.com/Begosi" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white transition-colors flex items-center gap-2 text-sm">
+          <a href="https://github.com/Begosi" target="_blank" rel="noopener noreferrer" className="text-white/65 hover:text-white transition-colors flex items-center gap-2 text-sm">
             <Github className="w-4 h-4" /> GitHub
           </a>
-          <a href="mailto:andrefonsecaempr@gmail.com" className="text-white/40 hover:text-white transition-colors flex items-center gap-2 text-sm">
+          <a href="mailto:andrefonsecaempr@gmail.com" className="text-white/65 hover:text-white transition-colors flex items-center gap-2 text-sm">
             <Mail className="w-4 h-4" /> E-mail
           </a>
         </div>
 
-        <p className="text-white/40 text-sm flex items-center gap-2">
+        <p className="text-white/60 text-sm flex items-center gap-2">
           Designed with <span className="text-blue-500">♥</span> in Brazil
         </p>
       </div>

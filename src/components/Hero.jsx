@@ -30,7 +30,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-24 px-6 overflow-hidden" id="home">
+    <section className="relative min-h-screen flex items-center justify-center pt-24 md:pt-32 pb-16 md:pb-0 px-6 overflow-hidden" id="home">
 
 
       <div className="max-w-7xl w-full mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -42,7 +42,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           >
-            <h2 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-[1.1]">
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-white leading-[1.1]">
               Transformando Lógica e <span className="text-gradient">Dados</span> em Soluções Web.
             </h2>
           </motion.div>
@@ -51,7 +51,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="text-lg md:text-xl text-white/60 max-w-2xl font-light leading-relaxed"
+            className="text-lg md:text-xl text-white/80 max-w-2xl font-light leading-relaxed"
           >
             Sou Desenvolvedor e Analista de Sistemas apaixonado por tecnologia, com vasta experiência em ecossistemas SAP, desenvolvimento Web de alto nível e Design.
           </motion.p>
@@ -78,7 +78,7 @@ export default function Hero() {
         </div>
 
         {/* Right Content / Card */}
-        <div className="col-span-1 lg:col-span-4 relative">
+        <div className="col-span-1 lg:col-span-4 relative w-full max-w-sm mx-auto">
           <motion.div
             initial={{ opacity: 0, x: 50, rotate: 5 }}
             animate={{ opacity: 1, x: 0, rotate: 0 }}
