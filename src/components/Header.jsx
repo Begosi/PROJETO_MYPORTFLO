@@ -35,7 +35,15 @@ export default function Header() {
           </div>
 
           <div className="flex items-center gap-2">
-            <MagneticButton className="hidden md:flex bg-white text-black px-6 py-2.5 rounded-full font-semibold text-sm items-center gap-2 hover:bg-white/90 transition-colors">
+            <MagneticButton 
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = '/curriculo.pdf';
+                link.download = 'Curriculo_Andre_Luis.pdf';
+                link.click();
+              }}
+              className="hidden md:flex bg-white text-black px-6 py-2.5 rounded-full font-semibold text-sm items-center gap-2 hover:bg-white/90 transition-colors"
+            >
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
@@ -72,7 +80,15 @@ export default function Header() {
               <a href="#projects" onClick={closeMenu} className="hover:text-white transition-colors">Projetos</a>
               <a href="#contact" onClick={closeMenu} className="hover:text-white transition-colors mt-4">Contato</a>
               
-              <button className="mt-8 bg-white text-black px-8 py-4 rounded-full font-semibold text-lg flex items-center gap-3">
+              <button 
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = '/curriculo.pdf';
+                  link.download = 'Curriculo_Andre_Luis.pdf';
+                  link.click();
+                }}
+                className="mt-8 bg-white text-black px-8 py-4 rounded-full font-semibold text-lg flex items-center gap-3"
+              >
                 <span className="relative flex h-3 w-3">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
